@@ -218,6 +218,7 @@ foreach ($peliculas as $fila) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Listado de personajes</title>
   <LINK REL=StyleSheet HREF="estilo/style.css" TYPE="text/css" MEDIA=screen>
+  <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
 </head>
 
 <body>
@@ -240,6 +241,11 @@ foreach ($peliculas as $fila) {
         <li><?php echo $row['fecha']?></li>
         <li>
         <img src="img/<?php echo $cont?>.jpg" alt="<?php echo $row['nombre'] ?>">
+        </li>
+        <li>
+          <a><span class="lnr lnr-eye"></span></a>
+          <a href="editar.php"><span class="lnr lnr-pencil"></span></a>
+          <a><span class="lnr lnr-trash"></span></a>
         </li>
     </ul>
     <?php } ?>
