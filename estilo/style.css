@@ -5,6 +5,10 @@ body{
     margin-right: 200px;
 }
 
+h1{
+    margin-left: 300px;
+}
+
 ul{
     list-style: none;
     margin: 0;
@@ -24,4 +28,7 @@ ul.cabecera li{
 img{
     width: 80%;
     margin-top: 4px;
+}
+.imagenEditar{
+    width: 30%;
 }

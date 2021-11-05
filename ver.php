@@ -20,10 +20,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <LINK REL=StyleSheet HREF="estilo/style.css" TYPE="text/css" MEDIA=screen>
-    <title>Editar Película</title>
+    <title>Ver Datos Película</title>
 </head>
 <body>
-    <h1>Editar Película</h1>
+    <h1>Ver Datos Película</h1>
     <a href="personajes.php" title="Volver">Volver</a>
     <h2>Nombre: <?php echo $nombreEdi?></h2>
     <p>Director: <?php echo $directorEdi?></p>
