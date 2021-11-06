@@ -28,7 +28,7 @@
     <h2>Nombre: <?php echo $nombreEdi?></h2>
     <p>Director: <?php echo $directorEdi?></p>
     <p>País: <?php echo $paisEdi?></p>
-    <p>Fecha: <?php echo $fechaEdi?></p>
+    <p>Fecha: <?php echo $fechaEdi->format("Y-m-d")?></p>
     <img src="img/<?php echo $imagenEdi?>" alt="" class="imagenEditar">
 </body>
 </html>

@@ -20,63 +20,72 @@ if (!isset($_SESSION['peliculas'])) {
       'director' => 'Mathieu Kassovitz',
       'pais' => 'Francia',
       'fecha' => DateTime::createFromFormat("Y-m-d","1996-1-30", new DateTimeZone("Europe/Madrid")),
-      'imagen' => '1.jpg'
+      'imagen' => '1.jpg',
+      'gif' => '1g.gif'
     ],
     [
       'nombre' => 'Irreversible',
       'director' => 'Gaspar Noé',
       'pais' => 'Francia',
       'fecha' => DateTime::createFromFormat("Y-m-d","2002-10-11", new DateTimeZone("Europe/Madrid")),
-      'imagen' => '2.jpg'
+      'imagen' => '2.jpg',
+      'gif' => '2g.gif'
     ],
     [
       'nombre' => 'Lazzaro Felice',
       'director' => 'Alice Rohrwacher',
       'pais' => 'Italia',
       'fecha' => DateTime::createFromFormat("Y-m-d","2018-9-13", new DateTimeZone("Europe/Madrid")),
-      'imagen' => '3.jpg'
+      'imagen' => '3.jpg',
+      'gif' => '3g.gif'
     ],
     [
       'nombre' => 'Mulholland Drive',
       'director' => 'David Lynch',
       'pais' => 'Estados Unidos',
       'fecha' => DateTime::createFromFormat("Y-m-d","2002-3-8", new DateTimeZone("Europe/Madrid")),
-      'imagen' => '4.jpg'
+      'imagen' => '4.jpg',
+      'gif' => '4g.gif'
     ],
     [
       'nombre' => 'Alien: El Octavo Pasajero',
       'director' => 'Ridley Scott',
       'pais' => 'Estados Unidos',
       'fecha' => DateTime::createFromFormat("Y-m-d","1979-9-25", new DateTimeZone("Europe/Madrid")),
-      'imagen' => '5.jpg'
+      'imagen' => '5.jpg',
+      'gif' => '5g.gif'
     ],
     [
       'nombre' => 'Trainspotting',
       'director' => 'Danny Boyle',
       'pais' => 'Inglaterra',
       'fecha' => DateTime::createFromFormat("Y-m-d","1996-9-23", new DateTimeZone("Europe/Madrid")),
-      'imagen' => '6.jpg'
+      'imagen' => '6.jpg',
+      'gif' => '6g.gif'
     ],
     [
       'nombre' => 'This is England',
       'director' => 'Shane Meadows',
       'pais' => 'Inglaterra',
       'fecha' => DateTime::createFromFormat("Y-m-d","2008-1-4", new DateTimeZone("Europe/Madrid")),
-      'imagen' => '7.jpg'
+      'imagen' => '7.jpg',
+      'gif' => '7g.gif'
     ],
     [
       'nombre' => 'Volver',
       'director' => 'Pedro Almodóvar',
       'pais' => 'España',
       'fecha' => DateTime::createFromFormat("Y-m-d","2006-3-10", new DateTimeZone("Europe/Madrid")),
-      'imagen' => '8.jpg'
+      'imagen' => '8.jpg',
+      'gif' => '8g.gif'
     ],
     [
       'nombre' => 'Tristana',
       'director' => 'Luis Buñuel',
       'pais' => 'España',
       'fecha' => DateTime::createFromFormat("Y-m-d","1974-8-16", new DateTimeZone("Europe/Madrid")),
-      'imagen' => '9.jpg'
+      'imagen' => '9.jpg',
+      'gif' => '9g.gif'
     ],
     [
       'nombre' => 'Who Killed Captain Alex',

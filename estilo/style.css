@@ -1,8 +1,10 @@
 body{
     max-width: 100%;
-    background-color: #eee;
+    background-color: rgb(0, 0, 0);
     margin-left: 200px;
     margin-right: 200px;
+    color: rgb(255, 255, 255);
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 h1{
@@ -15,6 +17,31 @@ ul{
     padding: 0;
     border-bottom: 1px solid black;
 }
+/*animacion de victoria y derrota*/
+.fadeOut {
+    position: absolute;
+    width: 1661px;
+    height: 900px;
+    top: 80px;
+    background: black;
+    visibility:hidden;
+    color: red;
+    -webkit-animation: fadeinout 5s linear forwards;
+    animation: fadeinout 5s linear forwards;
+    opacity: 0;
+}
+
+@-webkit-keyframes fadeOut {
+  50% { opacity: 1; visibility:visible;}
+}
+
+@keyframes fadeOut {
+  50% { opacity: 1; visibility:visible;}
+}
+.fadeOut {
+    -webkit-animation-name: fadeout;
+    animation-name: fadeOut;
+ }
 
 ul li{
     display: inline-block;
@@ -24,7 +51,9 @@ ul li{
 ul.cabecera li{
     font-weight: bold;
 }
-
+.gif{
+    width: 80%;
+}
 img{
     width: 80%;
     margin-top: 4px;

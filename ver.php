@@ -3,11 +3,12 @@
     if (isset($_GET['id'])){
         $id = $_GET['id'];
         $pelicula = $_SESSION['peliculas'][$id];
-        $nombreEdi = $pelicula['nombre'];
-        $directorEdi = $pelicula['director'];
-        $paisEdi = $pelicula['pais'];
-        $fechaEdi = $pelicula['fecha'];
-        $imagenEdi = $pelicula['imagen'];
+        $nombreVer = $pelicula['nombre'];
+        $directorVer = $pelicula['director'];
+        $paisVer = $pelicula['pais'];
+        $fechaVer = $pelicula['fecha'];
+        $imagenVer = $pelicula['imagen'];
+        $gifVer = $pelicula['gif'];
     }
     else{
         echo "No encuentro el personaje";
@@ -23,12 +24,14 @@
     <title>Ver Datos Película</title>
 </head>
 <body>
+<div class="fadeOut"><img class="gif" src="img/<?php echo $gifVer?>" alt=""></div>
     <h1>Ver Datos Película</h1>
     <a href="personajes.php" title="Volver">Volver</a>
-    <h2>Nombre: <?php echo $nombreEdi?></h2>
-    <p>Director: <?php echo $directorEdi?></p>
-    <p>País: <?php echo $paisEdi?></p>
-    <p>Fecha: <?php echo $fechaEdi?></p>
-    <img src="img/<?php echo $imagenEdi?>" alt="" class="imagenEditar">
+    <h2>Nombre: <?php echo $nombreVer?></h2>
+    <p>Director: <?php echo $directorVer?></p>
+    <p>País: <?php echo $paisVer?></p>
+    <p>Fecha: <?php echo $fechaVer ->format("Y-m-d")?></p>
+    <img src="img/<?php echo $imagenVer?>" alt="" class="imagenEditar">
+    
 </body>
 </html>
