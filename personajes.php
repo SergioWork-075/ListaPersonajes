@@ -227,28 +227,32 @@ if (!isset($_SESSION['peliculas'])) {
       'director' => 'Anna Biller',
       'pais' => 'Estados Unidos',
       'fecha' => DateTime::createFromFormat("Y-m-d","2016-1-31", new DateTimeZone("Europe/Madrid")),
-      'imagen' => '22.jpg'
+      'imagen' => '22.jpg',
+      'gif' => '22g.gif'
     ],
     [
       'nombre' => 'Deseando Amar',
       'director' => 'Wong Kar-wai',
       'pais' => 'Hong Kong',
       'fecha' => DateTime::createFromFormat("Y-m-d","2001-2-16", new DateTimeZone("Europe/Madrid")),
-      'imagen' => '23.jpg'
+      'imagen' => '23.jpg',
+      'gif' => '23g.gif'
     ],
     [
       'nombre' => 'El Penalti Más Largo',
       'director' => 'Roberto Santiago',
       'pais' => 'España',
       'fecha' => DateTime::createFromFormat("Y-m-d","2005-3-9", new DateTimeZone("Europe/Madrid")),
-      'imagen' => '24.jpg'
+      'imagen' => '24.jpg',
+      'gif' => '24g.gif'
     ],
     [
       'nombre' => 'Tenet',
       'director' => 'Christopher Nolan',
       'pais' => 'Estados Unidos',
       'fecha' => DateTime::createFromFormat("Y-m-d","2020-9-3", new DateTimeZone("Europe/Madrid")),
-      'imagen' => '25.jpg'
+      'imagen' => '25.jpg',
+      'gif' => '25g.gif'
     ]
   ];
 }
