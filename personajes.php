@@ -6,12 +6,51 @@ if (isset($_GET['action']) && $_GET['action'] == "Reiniciar") {
   session_start();
 }
 
-if (isset($_GET['action']) && $_GET['action'] == "Ordenar"){
+//POR NOMBRE
+if (isset($_GET['action']) && $_GET['action'] == "OrdenarDescNome"){
+  foreach ($_SESSION['peliculas'] as $key => $row){
+      $nombre[$key] = $row['nombre'];
+  }
+  array_multisort($nombre, SORT_DESC, $_SESSION['peliculas']);
+}
+
+if (isset($_GET['action']) && $_GET['action'] == "OrdenarAscNome"){
+  foreach ($_SESSION['peliculas'] as $key => $row){
+      $nombre[$key] = $row['nombre'];
+  }
+  array_multisort($nombre, SORT_ASC, $_SESSION['peliculas']);
+}
+
+//POR PAIS
+if (isset($_GET['action']) && $_GET['action'] == "OrdenarDescPais"){
+  foreach ($_SESSION['peliculas'] as $key => $row){
+      $pais[$key] = $row['pais'];
+  }
+  array_multisort($pais, SORT_DESC, $_SESSION['peliculas']);
+}
+
+if (isset($_GET['action']) && $_GET['action'] == "OrdenarAscPais"){
+  foreach ($_SESSION['peliculas'] as $key => $row){
+      $pais[$key] = $row['pais'];
+  }
+  array_multisort($pais, SORT_ASC, $_SESSION['peliculas']);
+}
+
+//POR FECHA
+if (isset($_GET['action']) && $_GET['action'] == "OrdenarDescFecha"){
+  foreach ($_SESSION['peliculas'] as $key => $row){
+      $fechas[$key] = $row['fecha'];
+  }
+  array_multisort($fechas, SORT_DESC, $_SESSION['peliculas']);
+}
+
+if (isset($_GET['action']) && $_GET['action'] == "OrdenarAscFecha"){
   foreach ($_SESSION['peliculas'] as $key => $row){
       $fechas[$key] = $row['fecha'];
   }
   array_multisort($fechas, SORT_ASC, $_SESSION['peliculas']);
 }
+
 
 if (!isset($_SESSION['peliculas'])) {
   $_SESSION['peliculas'] = [
@@ -243,16 +282,32 @@ foreach ($peliculas as $fila) {
   <h1>Listado de películas</h1>
   <a href="personajes.php?action=Reiniciar" name="reiniciar">Reiniciar</a>
   <ul class="cabecera">
-    <li>Nombre</li>
-    <a href="personajes.php?action=ordenar&campo=nombre&orden=asc">
+    <li>Nombre
+      <a href="personajes.php?action=OrdenarDescNome">
       <span class="lnr lnr-arrow-down"></span>
     </a>
-    <a href="personajes.php?action=ordenar&campo=nombre&orden=desc">
+    <a href="personajes.php?action=OrdenarAscNome">
       <span class="lnr lnr-arrow-up"></span>
     </a>
+  </li>
+    
     <li>Director</li>
-    <li>Pais</li>
-    <li>Fecha</li>
+    <li>Pais
+    <a href="personajes.php?action=OrdenarDescPais">
+      <span class="lnr lnr-arrow-down"></span>
+    </a>
+    <a href="personajes.php?action=OrdenarAscPais">
+      <span class="lnr lnr-arrow-up"></span>
+    </a>
+    </li>
+    <li>Fecha
+    <a href="personajes.php?action=OrdenarAscFecha">
+      <span class="lnr lnr-arrow-down"></span>
+    </a>
+    <a href="personajes.php?action=OrdenarDescFecha">
+      <span class="lnr lnr-arrow-up"></span>
+    </a>
+    </li>
     <li>Imagen</li>
   </ul>
   <?php $cont = 0;
@@ -265,7 +320,7 @@ foreach ($peliculas as $fila) {
       <li><?php echo $row['pais'] ?></li>
       <li><?php echo $row['fecha'] ->format("Y-m-d")?></li>
       <li>
-        <img src="img/<?php echo $cont ?>.jpg" alt="<?php echo $row['nombre'] ?>">
+        <img src="img/<?php echo $row['imagen'] ?>" alt="<?php echo $row['nombre'] ?>">
       </li>
       <li>
         <a href="ver.php?id=<?php echo $key ?>" title="ver"><span class="lnr lnr-eye"></span></a>
