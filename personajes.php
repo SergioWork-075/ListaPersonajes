@@ -131,84 +131,96 @@ if (!isset($_SESSION['peliculas'])) {
       'director' => 'Nabwana I.G.G.',
       'pais' => 'Uganda',
       'fecha' => DateTime::createFromFormat("Y-m-d","2010-1-30", new DateTimeZone("Europe/Madrid")),
-      'imagen' => '10.jpg'
+      'imagen' => '10.jpg',
+      'gif' => '10g.gif'
     ],
     [
       'nombre' => 'Las Noches de Cabiria',
       'director' => 'Federico Fellini',
       'pais' => 'Italia',
       'fecha' => DateTime::createFromFormat("Y-m-d","1958-4-16", new DateTimeZone("Europe/Madrid")),
-      'imagen' => '11.jpg'
+      'imagen' => '11.jpg',
+      'gif' => '11g.gif'
     ],
     [
       'nombre' => 'Casablanca',
       'director' => 'Michael Curtiz',
       'pais' => 'Estados Unidos',
       'fecha' => DateTime::createFromFormat("Y-m-d","1946-12-19", new DateTimeZone("Europe/Madrid")),
-      'imagen' => '12.jpg'
+      'imagen' => '12.jpg',
+      'gif' => '12g.gif'
     ],
     [
       'nombre' => 'Dune 1984',
       'director' => 'David Lynch',
       'pais' => 'Estados Unidos',
       'fecha' => DateTime::createFromFormat("Y-m-d","1984-12-14", new DateTimeZone("Europe/Madrid")),
-      'imagen' => '13.jpg'
+      'imagen' => '13.jpg',
+      'gif' => '13g.gif'
     ],
     [
       'nombre' => 'Dune: Parte Uno',
       'director' => 'Denis Villeneuve',
       'pais' => 'Estados Unidos',
       'fecha' => DateTime::createFromFormat("Y-m-d","2021-9-17", new DateTimeZone("Europe/Madrid")),
-      'imagen' => '14.jpg'
+      'imagen' => '14.jpg',
+      'gif' => '14g.gif'
     ],
     [
       'nombre' => 'La Caza',
       'director' => 'Thomas Vinterberg',
       'pais' => 'Dinamarca',
       'fecha' => DateTime::createFromFormat("Y-m-d","2013-4-19", new DateTimeZone("Europe/Madrid")),
-      'imagen' => '15.jpg'
+      'imagen' => '15.jpg',
+      'gif' => '15g.gif'
     ],
     [
       'nombre' => 'Otra Ronda',
       'director' => 'Thomas Vinterberg',
       'pais' => 'Dinamarca',
       'fecha' => DateTime::createFromFormat("Y-m-d","2021-4-9", new DateTimeZone("Europe/Madrid")),
-      'imagen' => '16.jpg'
+      'imagen' => '16.jpg',
+      'gif' => '16g.gif'
     ],
     [
       'nombre' => 'La Gran Belleza',
       'director' => 'Paolo Sorrentino',
       'pais' => 'Italia',
       'fecha' => DateTime::createFromFormat("Y-m-d","2013-12-5", new DateTimeZone("Europe/Madrid")),
-      'imagen' => '17.jpg'
+      'imagen' => '17.jpg',
+      'gif' => '17g.gif'
     ],
     [
       'nombre' => 'Con Faldas y a lo Loco',
       'director' => 'Billy Wilder',
       'pais' => 'Estados Unidos',
       'fecha' => DateTime::createFromFormat("Y-m-d","1963-10-14", new DateTimeZone("Europe/Madrid")),
-      'imagen' => '18.jpg'
+      'imagen' => '18.jpg',
+      'gif' => '18g.gif'
     ],
     [
       'nombre' => 'Equals',
       'director' => 'Drake Doremus',
       'pais' => 'Estados Unidos',
       'fecha' => DateTime::createFromFormat("Y-m-d","2015-9-5", new DateTimeZone("Europe/Madrid")),
-      'imagen' => '19.jpg'
+      'imagen' => '19.jpg',
+      'gif' => '19g.gif'
     ],
     [
       'nombre' => 'Café Society',
       'director' => 'Woody Allen',
       'pais' => 'Estados Unidos',
       'fecha' => DateTime::createFromFormat("Y-m-d","2016-7-15", new DateTimeZone("Europe/Madrid")),
-      'imagen' => '20.jpg'
+      'imagen' => '20.jpg',
+      'gif' => '20g.gif'
     ],
     [
       'nombre' => 'Too Late',
       'director' => 'Dennis Hauck',
       'pais' => 'Estados Unidos',
       'fecha' => DateTime::createFromFormat("Y-m-d","2015-6-11", new DateTimeZone("Europe/Madrid")),
-      'imagen' => '21.jpg'
+      'imagen' => '21.jpg',
+      'gif' => '21g.gif'
     ],
     [
       'nombre' => 'The Love Witch',
