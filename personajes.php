@@ -51,6 +51,11 @@ if (isset($_GET['action']) && $_GET['action'] == "OrdenarAscFecha"){
   array_multisort($fechas, SORT_ASC, $_SESSION['peliculas']);
 }
 
+//PARA BORRAR
+if (isset($_GET['action']) && $_GET['action'] == "borrar"){
+  $id = $_GET['id'];
+  unset($_SESSION['peliculas'][$id]);
+}
 
 if (!isset($_SESSION['peliculas'])) {
   $_SESSION['peliculas'] = [
@@ -215,10 +220,10 @@ if (!isset($_SESSION['peliculas'])) {
       'gif' => '20g.gif'
     ],
     [
-      'nombre' => 'Too Late',
-      'director' => 'Dennis Hauck',
-      'pais' => 'Estados Unidos',
-      'fecha' => DateTime::createFromFormat("Y-m-d","2015-6-11", new DateTimeZone("Europe/Madrid")),
+      'nombre' => 'Belladonna of Saddness',
+      'director' => 'Eiichi Yamamoto',
+      'pais' => 'Japón',
+      'fecha' => DateTime::createFromFormat("Y-m-d","1973-6-28", new DateTimeZone("Europe/Madrid")),
       'imagen' => '21.jpg',
       'gif' => '21g.gif'
     ],
@@ -239,10 +244,10 @@ if (!isset($_SESSION['peliculas'])) {
       'gif' => '23g.gif'
     ],
     [
-      'nombre' => 'El Penalti Más Largo',
-      'director' => 'Roberto Santiago',
-      'pais' => 'España',
-      'fecha' => DateTime::createFromFormat("Y-m-d","2005-3-9", new DateTimeZone("Europe/Madrid")),
+      'nombre' => 'Chicken Run',
+      'director' => 'Nick Park',
+      'pais' => 'Inglaterra',
+      'fecha' => DateTime::createFromFormat("Y-m-d","2000-8-14", new DateTimeZone("Europe/Madrid")),
       'imagen' => '24.jpg',
       'gif' => '24g.gif'
     ],
@@ -296,7 +301,9 @@ foreach ($peliculas as $fila) {
 
 <body>
   <h1>Listado de películas</h1>
-  <a href="personajes.php?action=Reiniciar" name="reiniciar">Reiniciar</a>
+  <a href="personajes.php?action=Reiniciar" name="reiniciar" style="font-weight: bolder;">Reiniciar</a>
+  <br/>
+  <br/>
   <ul class="cabecera">
     <li>Nombre
       <a href="personajes.php?action=OrdenarDescNome">
@@ -331,17 +338,17 @@ foreach ($peliculas as $fila) {
     $cont++;
   ?>
     <ul>
-      <li><?php echo $row['nombre'] ?></li>
-      <li><?php echo $row['director'] ?></li>
-      <li><?php echo $row['pais'] ?></li>
-      <li><?php echo $row['fecha'] ->format("Y-m-d")?></li>
+      <li class="cuerpo"><?php echo $row['nombre'] ?></li>
+      <li class="cuerpo"><?php echo $row['director'] ?></li>
+      <li class="cuerpo"><?php echo $row['pais'] ?></li>
+      <li class="cuerpo"><?php echo $row['fecha'] ->format("Y-m-d")?></li>
       <li>
         <img src="img/<?php echo $row['imagen'] ?>" alt="<?php echo $row['nombre'] ?>">
       </li>
-      <li>
+      <li class="cuerpo">
         <a href="ver.php?id=<?php echo $key ?>" title="ver"><span class="lnr lnr-eye"></span></a>
         <a href="editar.php?id=<?php echo $key ?>" title="editar"><span class="lnr lnr-pencil"></span></a>
-        <a><span class="lnr lnr-trash"></span></a>
+        <a href="personajes.php?action=borrar&id=<?php echo $key ?>" style="width: 30%;" title="borrar"> <span class="lnr lnr-trash"></span></a>
       </li>
     </ul>
   <?php } ?>

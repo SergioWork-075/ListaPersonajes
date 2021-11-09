@@ -1,47 +1,33 @@
 body{
     max-width: 100%;
-    background-color: rgb(0, 0, 0);
+    background: rgb(36,24,51);
+    background: linear-gradient(90deg, rgba(36,24,51,1) 0%, rgba(59,5,49,1) 100%);
     margin-left: 200px;
+    margin-top: 50px;
+    margin-bottom: 50px;
     margin-right: 200px;
     color: rgb(255, 255, 255);
     font-family: Arial, Helvetica, sans-serif;
 }
-
+a:link, a:visited, a:active {
+    text-decoration:none;
+}
+a{
+    color: yellow;
+}
 h1{
-    margin-left: 300px;
+    color: #ffffff;
+    margin-left: 450px;
 }
 
 ul{
     list-style: none;
     margin: 0;
     padding: 0;
-    border-bottom: 1px solid black;
+    margin-bottom: 20px;
+    border-bottom: 2px solid rgb(185, 169, 169);
+    font-size: 18px;
 }
-/*animacion de victoria y derrota*/
-.fadeOut {
-    position: absolute;
-    width: 1661px;
-    height: 900px;
-    top: 80px;
-    background: black;
-    visibility:hidden;
-    color: red;
-    -webkit-animation: fadeinout 5s linear forwards;
-    animation: fadeinout 5s linear forwards;
-    opacity: 0;
-}
-
-@-webkit-keyframes fadeOut {
-  50% { opacity: 1; visibility:visible;}
-}
-
-@keyframes fadeOut {
-  50% { opacity: 1; visibility:visible;}
-}
-.fadeOut {
-    -webkit-animation-name: fadeout;
-    animation-name: fadeOut;
- }
 
 ul li{
     display: inline-block;
@@ -50,13 +36,21 @@ ul li{
 
 ul.cabecera li{
     font-weight: bold;
+    margin-bottom: 10px;
+    color: #ffa23e;
+}
+
+.cuerpo {
+    position: relative;
+    bottom: 140px;
 }
 .gif{
     width: 80%;
 }
 img{
-    width: 80%;
+    width: 85%;
     margin-top: 4px;
+    margin-bottom: 4px;
 }
 .imagenEditar{
     width: 30%;
