@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 if (isset($_GET['action']) && $_GET['action'] == "Reiniciar") {
   session_destroy();
   session_start();
@@ -301,33 +300,33 @@ foreach ($peliculas as $fila) {
 
 <body>
   <h1>Listado de películas</h1>
-  <a href="personajes.php?action=Reiniciar" name="reiniciar" style="font-weight: bolder;">Reiniciar</a>
+  <a href="index.php?action=Reiniciar" name="reiniciar" style="font-weight: bolder;">Reiniciar</a>
   <br/>
   <br/>
   <ul class="cabecera">
     <li>Nombre
-      <a href="personajes.php?action=OrdenarDescNome">
+      <a href="index.php?action=OrdenarDescNome">
       <span class="lnr lnr-arrow-down"></span>
     </a>
-    <a href="personajes.php?action=OrdenarAscNome">
+    <a href="index.php?action=OrdenarAscNome">
       <span class="lnr lnr-arrow-up"></span>
     </a>
   </li>
     
     <li>Director</li>
     <li>Pais
-    <a href="personajes.php?action=OrdenarDescPais">
+    <a href="index.php?action=OrdenarDescPais">
       <span class="lnr lnr-arrow-down"></span>
     </a>
-    <a href="personajes.php?action=OrdenarAscPais">
+    <a href="index.php?action=OrdenarAscPais">
       <span class="lnr lnr-arrow-up"></span>
     </a>
     </li>
     <li>Fecha
-    <a href="personajes.php?action=OrdenarAscFecha">
+    <a href="index.php?action=OrdenarAscFecha">
       <span class="lnr lnr-arrow-down"></span>
     </a>
-    <a href="personajes.php?action=OrdenarDescFecha">
+    <a href="index.php?action=OrdenarDescFecha">
       <span class="lnr lnr-arrow-up"></span>
     </a>
     </li>
@@ -348,7 +347,7 @@ foreach ($peliculas as $fila) {
       <li class="cuerpo">
         <a href="ver.php?id=<?php echo $key ?>" title="ver"><span class="lnr lnr-eye"></span></a>
         <a href="editar.php?id=<?php echo $key ?>" title="editar"><span class="lnr lnr-pencil"></span></a>
-        <a href="personajes.php?action=borrar&id=<?php echo $key ?>" style="width: 30%;" title="borrar"> <span class="lnr lnr-trash"></span></a>
+        <a href="index.php?action=borrar&id=<?php echo $key ?>" style="width: 30%;" title="borrar"> <span class="lnr lnr-trash"></span></a>
       </li>
     </ul>
   <?php } ?>

@@ -27,7 +27,7 @@ if (isset($_GET['id'])) {
 <body>
     <div class="fadeOut"><img class="gif" src="img/<?php echo $gifVer ?>" alt=""></div>
     <div class="TITULO"><h1>Ver Datos Película</h1></div>
-    <a href="personajes.php" title="Volver" style="font-weight: bolder;">Volver</a>
+    <a href="index.php" title="Volver" style="font-weight: bolder;">Volver</a>
     <img src="img/<?php echo $imagenVer ?>" style="float: right;" alt="" class="imagenVER">
     <div class="cuerpoVER">
         <h2>Nombre:</h2> <p><?php echo $nombreVer ?></p>

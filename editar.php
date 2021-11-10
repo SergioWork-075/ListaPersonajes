@@ -25,7 +25,7 @@ if (isset($_GET['id'])) {
 
 <body>
     <h1>Editar Película</h1>
-    <a href="personajes.php" title="Volver" style="font-weight: bolder;">Volver</a>
+    <a href="index.php" title="Volver" style="font-weight: bolder;">Volver</a>
     <h2>Nombre: <?php echo $nombreEdi ?></h2>
     <p>Director: <?php echo $directorEdi ?></p>
     <p>País: <?php echo $paisEdi ?></p>
