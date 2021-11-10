@@ -17,7 +17,8 @@ a{
 }
 h1{
     color: #ffffff;
-    margin-left: 450px;
+    font-size: 46px;
+    text-align: center;
 }
 
 ul{
@@ -25,7 +26,7 @@ ul{
     margin: 0;
     padding: 0;
     margin-bottom: 20px;
-    /*¡border-bottom: 2px solid rgb(185, 169, 169);*/
+    /*border-bottom: 2px solid rgb(185, 169, 169);*/
     font-size: 18px;
 }
 
@@ -37,7 +38,7 @@ ul li{
 ul.cabecera li{
     font-weight: bold;
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     color: #ffa23e;
 }
 

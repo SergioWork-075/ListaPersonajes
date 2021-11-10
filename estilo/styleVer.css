@@ -3,8 +3,9 @@ body{
     background: rgb(36,24,51);
     margin-left: 250px;
     margin-bottom: 100px;
+    margin-top: 50px;
     font-size: 20px;
-    margin-right: 150px;
+    margin-right: 180px;
     color: rgb(255, 255, 255);
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -17,19 +18,16 @@ a{
 
 h1{
     color: rgb(255, 255, 255);
-    font-size: 30px;
-    margin-left: 550px;
+    font-size: 46px;
+    text-align: center;
 }
 h2{
-    color: #ffffff;
+    color: #ffa23e;
 }
 p{
     margin-left: 100px;
 }
 .TITULO{
-    margin-top: 10px;
-    border-radius: 20px;
-    padding: 1px;
     margin-bottom: 45px;
 }
 
@@ -59,7 +57,12 @@ p{
     animation-name: fadeOut;
  }
 .cuerpoVER{
-    margin-left: 80px;
+    padding-top: 20px;
+    padding-left: 50px;
+    padding-bottom: 20px;
+    margin-left: 50px;
+    border-radius: 40px;
+    background: rgb(59,5,49);
 }
 .gif{
     width: 80%;
@@ -69,6 +72,6 @@ img{
     margin-top: 4px;
 }
 .imagenVER{
-    margin-right: 500px;
+    margin-right: 450px;
     width: 30%;
 }
