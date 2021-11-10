@@ -30,10 +30,10 @@ if (isset($_GET['id'])) {
     <a href="personajes.php" title="Volver" style="font-weight: bolder;">Volver</a>
     <img src="img/<?php echo $imagenVer ?>" style="float: right;" alt="" class="imagenVER">
     <div class="cuerpoVER">
-        <h2>Nombre: <?php echo $nombreVer ?></h2>
-        <p>Director: <?php echo $directorVer ?></p>
-        <p>País: <?php echo $paisVer ?></p>
-        <p>Fecha: <?php echo $fechaVer->format("Y-m-d") ?></p>
+        <h2>Nombre:</h2> <p><?php echo $nombreVer ?></p>
+        <h2>Director:</h2> <p><?php echo $directorVer ?></p>
+        <h2>País:</h2> <p><?php echo $paisVer ?></p>
+        <h2>Fecha:</h2> <p><?php echo $fechaVer->format("Y-m-d") ?></p>
     </div>
 </body>
 

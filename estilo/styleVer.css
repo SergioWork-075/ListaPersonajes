@@ -2,7 +2,7 @@ body{
     max-width: 100%;
     background: rgb(36,24,51);
     margin-left: 250px;
-    margin-bottom: 50px;
+    margin-bottom: 100px;
     font-size: 20px;
     margin-right: 150px;
     color: rgb(255, 255, 255);
@@ -20,9 +20,14 @@ h1{
     font-size: 30px;
     margin-left: 550px;
 }
+h2{
+    color: #ffffff;
+}
+p{
+    margin-left: 100px;
+}
 .TITULO{
     margin-top: 10px;
-    background-color: rgb(25, 0, 54);
     border-radius: 20px;
     padding: 1px;
     margin-bottom: 45px;
@@ -54,7 +59,7 @@ h1{
     animation-name: fadeOut;
  }
 .cuerpoVER{
-    margin-left: 50px;
+    margin-left: 80px;
 }
 .gif{
     width: 80%;
