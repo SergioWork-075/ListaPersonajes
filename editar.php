@@ -1,22 +1,25 @@
 <?php
 session_start();
+
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
     $pelicula = $_SESSION['peliculas'][$id];
-    $nombreEdi = $pelicula['nombre'];
-    $directorEdi = $pelicula['director'];
-    $paisEdi = $pelicula['pais'];
-    $fechaEdi = $pelicula['fecha'];
-    $imagenEdi = $pelicula['imagen'];
+    $nombre = $pelicula['nombre'];
+    $director = $pelicula['director'];
+    $pais = $pelicula['pais'];
+    $fecha = $pelicula['fecha'];
+    if(isset($_GET['editar'])){
+        $_SESSION['peliculas']['nombre'] = $_GET['editadoNom'];
+        $_SESSION['peliculas']['director'] = $_GET['editadoDir'];
+        $_SESSION['peliculas']['pais'] = $_GET['editadoPai'];
+        $_SESSION['peliculas']['fecha'] = $_GET['editadoFec'];
+    
+        echo $_SESSION['peliculas'][$id];
+    }
 } else {
     echo "No encuentro el personaje";
 }
 
-if (!empty($_GET["editado"]) && is_array($_GET["editado"])) {
-    foreach ($_GET["editado"] as $editado) {
-        echo $editado;
-    }
-}
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -34,10 +37,10 @@ if (!empty($_GET["editado"]) && is_array($_GET["editado"])) {
     <form action="editar.php" method="get">
         <h1>Editar Película</h1>
         <a href="index.php" title="Volver" style="font-weight: bolder;">Volver</a>
-        <h2>Nombre: <input name="editado[]" id="editado1" type="text" value="<?php echo $nombreEdi ?>"></h2>
-        <p>Director: <input name="editado[]" id="editado1" type="text" value="<?php echo $directorEdi ?>"></p>
-        <p>País: <input name="editado[]" id="editado1" type="text" value="<?php echo $paisEdi ?>"></p>
-        <p>Fecha: <input name="editado[]" id="editado1" type="date" value="<?php echo $fechaEdi->format("Y-m-d") ?>"></p>
+        <h2>Nombre: <input name="editadoNom" type="text" value="<?php echo $nombre ?>"></h2>
+        <p>Director: <input name="editadoDir" type="text" value="<?php echo $director ?>"></p>
+        <p>País: <input name="editadoPai" type="text" value="<?php echo $pais ?>"></p>
+        <p>Fecha: <input name="editadoFec" type="date" value="<?php echo $fecha->format("Y-m-d") ?>"></p>
         <button type="submit" title="editar"><span class="lnr lnr-pencil"></span></button>
     </form>
 </body>
