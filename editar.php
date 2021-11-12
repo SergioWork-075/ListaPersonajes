@@ -1,25 +1,22 @@
 <?php
 session_start();
-
-if (isset($_GET['id'])) {
-    $id = $_GET['id'];
-    $pelicula = $_SESSION['peliculas'][$id];
-    $nombre = $pelicula['nombre'];
-    $director = $pelicula['director'];
-    $pais = $pelicula['pais'];
-    $fecha = $pelicula['fecha'];
-    if(isset($_GET['editar'])){
-        $_SESSION['peliculas']['nombre'] = $_GET['editadoNom'];
-        $_SESSION['peliculas']['director'] = $_GET['editadoDir'];
-        $_SESSION['peliculas']['pais'] = $_GET['editadoPai'];
-        $_SESSION['peliculas']['fecha'] = $_GET['editadoFec'];
-    
-        echo $_SESSION['peliculas'][$id];
-    }
+if (isset($_GET['id'])) { //obtenemos el id de la pelicula
+    $id = $_GET['id']; //lo pasamos como un parametro
+    $pelicula = $_SESSION['peliculas'][$id]; //pelicula es id
+    $nombreEdi = $pelicula['nombre']; //obtenemos todos los elementos
+    $directorEdi = $pelicula['director']; 
+    $paisEdi = $pelicula['pais'];
+    $fechaEdi = $pelicula['fecha'];
+    $imagenEdi = $pelicula['imagen'];
 } else {
-    echo "No encuentro el personaje";
+    echo "No encuentro el personaje"; //si no lo encuentra avisa al usuario
 }
-
+//PRUEBA EN EDITAR. Mismo codigo que en index
+if (!empty($_GET["editado"]) && is_array($_GET["editado"])) {
+    foreach ($_GET["editado"] as $_SESSION['editado']) {
+        echo $_SESSION['editado'];
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -34,14 +31,15 @@ if (isset($_GET['id'])) {
 </head>
 
 <body>
-    <form action="editar.php" method="get">
+    <form action="index.php" method="get"> <!--envio los datos del formulario al index-->
         <h1>Editar Película</h1>
-        <a href="index.php" title="Volver" style="font-weight: bolder;">Volver</a>
-        <h2>Nombre: <input name="editadoNom" type="text" value="<?php echo $nombre ?>"></h2>
-        <p>Director: <input name="editadoDir" type="text" value="<?php echo $director ?>"></p>
-        <p>País: <input name="editadoPai" type="text" value="<?php echo $pais ?>"></p>
-        <p>Fecha: <input name="editadoFec" type="date" value="<?php echo $fecha->format("Y-m-d") ?>"></p>
-        <button type="submit" title="editar"><span class="lnr lnr-pencil"></span></button>
+        <a href="index.php" title="Volver" style="font-weight: bolder;">Volver</a> <!--para volver a index-->
+        <p>Id:<input name="editado[]" id="editado1" type="" value="<?php echo $id ?>"></p> <!--obtengo  todos los datos. Pongo editado[] para que lo coga en get editado-->
+        <h2>Nombre: <input name="editado[]" id="editado2" type="text" value="<?php echo $nombreEdi ?>"></h2>
+        <p>Director: <input name="editado[]" id="editado3" type="text" value="<?php echo $directorEdi ?>"></p>
+        <p>País: <input name="editado[]" id="editado4" type="text" value="<?php echo $paisEdi ?>"></p>
+        <p>Fecha: <input name="editado[]" id="editado5" type="date" value="<?php echo $fechaEdi->format("Y-m-d") ?>"></p>
+        <button type="submit" title="editar"><span class="lnr lnr-pencil"></span></button> <!--submit para enviar los datos-->
     </form>
 </body>
 

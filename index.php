@@ -1,22 +1,45 @@
 <?php
+//Creamos la sesion
 session_start();
+//Para que el usuario pueda reiniciar la sesion
 if (isset($_GET['action']) && $_GET['action'] == "Reiniciar") {
   session_destroy();
   session_start();
 }
+
+//si lo ha editado
+if (isset($_GET['editado'])) { //si ha editado
+  foreach ($_GET["editado"] as $_SESSION['editado']) { //recorremos editado
+    echo $_SESSION['editado']; //lo mostramos
+}
+  
+  /* INTENTO DE EDITAR, PERO NO FUNCIONA
+  foreach ($_SESSION['peliculas'] as $key => $row) {
+    foreach ($_GET["editado"] as $_SESSION['editado']) {
+    if($_SESSION['editado']==$key){
+      $row['nombre'] == $_SESSION['editado'][2];
+      $row['director'] == $_SESSION['editado'][3];
+      $row['pais'] == $_SESSION['editado'][4];
+    }
+  }
+    /*$id = $_GET['id'];
+    $pelicula = $_SESSION['peliculas'][$id];*/
+    //echo $_SESSION['editado'];*/
+}
+
 //POR NOMBRE
 if (isset($_GET['action']) && $_GET['action'] == "OrdenarDescNome") {
   foreach ($_SESSION['peliculas'] as $key => $row) {
     $nombre[$key] = $row['nombre'];
   }
-  array_multisort($nombre, SORT_DESC, $_SESSION['peliculas']);
+  array_multisort($nombre, SORT_DESC, $_SESSION['peliculas']); //multisort descendiente por Nombre
 }
 
 if (isset($_GET['action']) && $_GET['action'] == "OrdenarAscNome") {
   foreach ($_SESSION['peliculas'] as $key => $row) {
     $nombre[$key] = $row['nombre'];
   }
-  array_multisort($nombre, SORT_ASC, $_SESSION['peliculas']);
+  array_multisort($nombre, SORT_ASC, $_SESSION['peliculas']); //multisort ascendiente por Nombre
 }
 
 //POR DIRECTOR
@@ -24,14 +47,14 @@ if (isset($_GET['action']) && $_GET['action'] == "OrdenarDescDir") {
   foreach ($_SESSION['peliculas'] as $key => $row) {
     $director[$key] = $row['director'];
   }
-  array_multisort($director, SORT_DESC, $_SESSION['peliculas']);
+  array_multisort($director, SORT_DESC, $_SESSION['peliculas']); //multisort descendiente por Nombre de director
 }
 
 if (isset($_GET['action']) && $_GET['action'] == "OrdenarAscDir") {
   foreach ($_SESSION['peliculas'] as $key => $row) {
     $nombre[$key] = $row['director'];
   }
-  array_multisort($nombre, SORT_ASC, $_SESSION['peliculas']);
+  array_multisort($nombre, SORT_ASC, $_SESSION['peliculas']); //multisort ascendiente por Nombre de director
 }
 
 //POR PAIS
@@ -39,14 +62,14 @@ if (isset($_GET['action']) && $_GET['action'] == "OrdenarDescPais") {
   foreach ($_SESSION['peliculas'] as $key => $row) {
     $pais[$key] = $row['pais'];
   }
-  array_multisort($pais, SORT_DESC, $_SESSION['peliculas']);
+  array_multisort($pais, SORT_DESC, $_SESSION['peliculas']); //multisort descendiente por pais 
 }
 
 if (isset($_GET['action']) && $_GET['action'] == "OrdenarAscPais") {
   foreach ($_SESSION['peliculas'] as $key => $row) {
     $pais[$key] = $row['pais'];
-  }
-  array_multisort($pais, SORT_ASC, $_SESSION['peliculas']);
+  } 
+  array_multisort($pais, SORT_ASC, $_SESSION['peliculas']); //multisort ascendiente por pais 
 }
 
 //POR FECHA
@@ -54,29 +77,30 @@ if (isset($_GET['action']) && $_GET['action'] == "OrdenarDescFecha") {
   foreach ($_SESSION['peliculas'] as $key => $row) {
     $fechas[$key] = $row['fecha'];
   }
-  array_multisort($fechas, SORT_DESC, $_SESSION['peliculas']);
+  array_multisort($fechas, SORT_DESC, $_SESSION['peliculas']); //ordenacion de fecha de forma descendiente
 }
 
 if (isset($_GET['action']) && $_GET['action'] == "OrdenarAscFecha") {
   foreach ($_SESSION['peliculas'] as $key => $row) {
     $fechas[$key] = $row['fecha'];
   }
-  array_multisort($fechas, SORT_ASC, $_SESSION['peliculas']);
+  array_multisort($fechas, SORT_ASC, $_SESSION['peliculas']); //ordenacion de fecha de forma ascendiente
 }
 
 //PARA BORRAR
 if (isset($_GET['action']) && $_GET['action'] == "borrar") {
-  $id = $_GET['id'];
-  unset($_SESSION['peliculas'][$id]);
+  $id = $_GET['id']; //para elegir cual vamos a borrar
+  unset($_SESSION['peliculas'][$id]); //para borrar el elegido
 }
 
+//Creo el array con todas las peliculas
 if (!isset($_SESSION['peliculas'])) {
   $_SESSION['peliculas'] = [
     [
       'nombre' => 'La Haine (El Odio)',
       'director' => 'Mathieu Kassovitz',
       'pais' => 'Francia',
-      'fecha' => DateTime::createFromFormat("Y-m-d", "1996-1-30", new DateTimeZone("Europe/Madrid")),
+      'fecha' => DateTime::createFromFormat("Y-m-d", "1996-1-30", new DateTimeZone("Europe/Madrid")), //las fechas con este formato
       'imagen' => '1.jpg',
       'gif' => '1g.gif'
     ],
@@ -273,7 +297,9 @@ if (!isset($_SESSION['peliculas'])) {
       'gif' => '25g.gif'
     ]
   ];
-} ?>
+} 
+
+?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -289,7 +315,7 @@ if (!isset($_SESSION['peliculas'])) {
 
 <body>
   <h1>Listado de películas</h1>
-  <a href="index.php?action=Reiniciar" name="reiniciar" style="font-weight: bolder;">
+  <a href="index.php?action=Reiniciar" name="reiniciar" style="font-weight: bolder;"> <!--direcciona a la funcion reiniciar-->
     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" width="3%" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
     </svg>
@@ -297,66 +323,66 @@ if (!isset($_SESSION['peliculas'])) {
   <br />
   <br />
   <ul class="cabecera">
-    <li>
+    <li><!--icono de almohadilla-->
       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" width="15%" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14" />
       </svg>
     </li>
     <li>Nombre
-      <a href="index.php?action=OrdenarDescNome">
+      <a href="index.php?action=OrdenarDescNome"> <!--direcciona a la funcion desc-->
         <span class="lnr lnr-arrow-down"></span>
       </a>
-      <a href="index.php?action=OrdenarAscNome">
+      <a href="index.php?action=OrdenarAscNome"> <!--direcciona a la funcion asc-->
         <span class="lnr lnr-arrow-up"></span>
       </a>
     </li>
 
     <li>Director
-      <a href="index.php?action=OrdenarDescDir">
+      <a href="index.php?action=OrdenarDescDir"> <!--direcciona a la funcion desc-->
         <span class="lnr lnr-arrow-down"></span>
       </a>
-      <a href="index.php?action=OrdenarAscDir">
+      <a href="index.php?action=OrdenarAscDir"> <!--direcciona a la funcion asc-->
         <span class="lnr lnr-arrow-up"></span>
       </a>
     </li>
     <li>Pais
-      <a href="index.php?action=OrdenarDescPais">
+      <a href="index.php?action=OrdenarDescPais"> <!--direcciona a la funcion desc-->
         <span class="lnr lnr-arrow-down"></span>
       </a>
-      <a href="index.php?action=OrdenarAscPais">
+      <a href="index.php?action=OrdenarAscPais"> <!--direcciona a la funcion asc-->
         <span class="lnr lnr-arrow-up"></span>
       </a>
     </li>
     <li>Fecha
-      <a href="index.php?action=OrdenarAscFecha">
+      <a href="index.php?action=OrdenarAscFecha"> <!--direcciona a la funcion asc-->
         <span class="lnr lnr-arrow-down"></span>
       </a>
-      <a href="index.php?action=OrdenarDescFecha">
+      <a href="index.php?action=OrdenarDescFecha"> <!--direcciona a la funcion desc-->
         <span class="lnr lnr-arrow-up"></span>
       </a>
     </li>
-    <li style="margin-left: 70px;">
+    <li style="margin-left: 70px;"> <!--icono de cine-->
       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" width="14%" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z" />
       </svg>
     </li>
   </ul>
-  <?php $cont = 0;
-  foreach ($_SESSION['peliculas'] as $key => $row) {
-    $cont++;
+  <?php $cont = 0; //para saber el numero de la pelicula en la lista
+  foreach ($_SESSION['peliculas'] as $key => $row) { //recorremos el array de pelis
+    $cont++; //aumento el contador
   ?>
     <ul>
       <li class="cuerpo">
         <?php echo $cont . "." ?>
-        <a href="ver.php?id=<?php echo $key ?>" title="ver"><span class="lnr lnr-eye"></span></a>
-        <a href="editar.php?id=<?php echo $key ?>" title="editar"><span class="lnr lnr-pencil"></span></a>
-        <a href="index.php?action=borrar&id=<?php echo $key ?>" style="width: 30%;" title="borrar"> <span class="lnr lnr-trash"></span></a>
-      </li>
+        <a href="ver.php?id=<?php echo $key ?>" title="ver"><span class="lnr lnr-eye"></span></a> <!--direcciona a ver, con el id-->
+        <a href="editar.php?id=<?php echo $key ?>" title="editar"><span class="lnr lnr-pencil"></span></a> <!--direcciona a editar, con el id-->
+        <a href="index.php?action=borrar&id=<?php echo $key ?>" style="width: 30%;" title="borrar"> <span class="lnr lnr-trash"></span></a> <!--direcciona a la funcion borrar, con el id-->
+      </li> <!--imprimimos el array-->
       <li class="cuerpo"><?php echo $row['nombre'] ?></li>
       <li class="cuerpo"><?php echo $row['director'] ?></li>
       <li class="cuerpo"><?php echo $row['pais'] ?></li>
       <li class="cuerpo"><?php echo $row['fecha']->format("Y-m-d") ?></li>
-      <li>
+      <li><!--mostramos la imagen-->
         <img src="img/<?php echo $row['imagen'] ?>" alt="<?php echo $row['nombre'] ?>">
       </li>
     </ul>

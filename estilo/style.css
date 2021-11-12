@@ -7,10 +7,10 @@ body{
     margin-bottom: 50px;
     margin-right: 150px;
     color: rgb(255, 255, 255);
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif; /*Estilo de la pagina, margenes, colores y fuente*/
 }
 a:link, a:visited, a:active {
-    text-decoration:none;
+    text-decoration:none; /*Sin estilo si lo ha clicado antes*/
 }
 a{
     color: yellow;
